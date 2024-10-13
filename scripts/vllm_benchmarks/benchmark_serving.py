@@ -626,7 +626,7 @@ if __name__ == "__main__":
         help="Number of prompts to process.",
     )
     parser.add_argument(
-        "--sharegpt-output-len",
+        "--sharegpt-output-len",#TODO
         type=int,
         default=None,
         help="Output length for each request. Overrides the output length "
@@ -674,7 +674,7 @@ if __name__ == "__main__":
         "used only for random sampling.",
     )
     parser.add_argument(
-        "--request-rate",
+        "--request-rate",# TODO
         type=float,
         default=float("inf"),
         help="Number of requests per second. If this is inf, "
@@ -725,3 +725,16 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     main(args)
+
+    """
+    ASYNC_REQUEST_FUNCS = {
+    "tgi": async_request_tgi,
+    "vllm": async_request_openai_completions,
+    "lmdeploy": async_request_openai_completions,
+    "deepspeed-mii": async_request_deepspeed_mii,
+    "openai": async_request_openai_completions,
+    "openai-chat": async_request_openai_chat_completions,
+    "tensorrt-llm": async_request_trt_llm,
+    "scalellm": async_request_openai_completions,
+}
+    """

@@ -273,15 +273,15 @@ if __name__ == "__main__":
                         help="Path to the dataset.")
     parser.add_argument("--input-len",
                         type=int,
-                        default=None,
+                        default=512,
                         help="Input prompt length for each request")
     parser.add_argument("--output-len",
                         type=int,
-                        default=None,
+                        default=2048,
                         help="Output length for each request. Overrides the "
                         "output length from the dataset.")
-    parser.add_argument("--model", type=str, default="facebook/opt-125m")
-    parser.add_argument("--tokenizer", type=str, default=None)
+    parser.add_argument("--model", type=str, default="/data/wjb/llm/models/Meta-Llama-3-8B")
+    parser.add_argument("--tokenizer", type=str)
     parser.add_argument('--quantization',
                         '-q',
                         choices=[*QUANTIZATION_METHODS, None],

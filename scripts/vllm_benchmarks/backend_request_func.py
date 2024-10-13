@@ -231,7 +231,7 @@ async def async_request_openai_completions(
     async with aiohttp.ClientSession(timeout=AIOHTTP_TIMEOUT) as session:
         assert not request_func_input.use_beam_search
         payload = {
-            "model": request_func_input.model,
+            "model": request_func_input.model,# "llama3-8b",#
             "prompt": request_func_input.prompt,
             "temperature": 0.0,
             "best_of": request_func_input.best_of,
